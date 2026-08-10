@@ -1,0 +1,84 @@
+.transaction-table {
+  margin-inline: 1rem;
+  margin-block: 1.4rem;
+  border-radius: 15px;
+  box-shadow:
+    0px 0px 25px 0px rgba(0, 0, 0, 0.04),
+    0px 4px 12px 0px rgba(0, 0, 0, 0.02);
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+.table-top {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 1.5rem;
+  align-items: center;
+  margin-inline: auto;
+}
+.icons {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
+
+  i {
+    color: #1a1d1f;
+    padding: 0.5rem;
+    border: 2px solid #ebebeb;
+    border-radius: 5px;
+  }
+}
+.table-wrapper {
+  overflow-x: scroll;
+}
+th,
+td {
+  padding-block: 1em;
+  font-weight: 500;
+  color: #747781;
+  font-size: 0.9rem;
+  padding-inline: 1.6rem;
+}
+th {
+  border-block: 0.8px solid rgba(157, 158, 160, 0.1);
+}
+td {
+  color: #1a1d1f;
+}
+.credit-amount {
+  color: green;
+}
+.credit,
+.debit {
+  font-size: 0.7rem;
+  background-color: #e9eaee;
+  border-radius: 20px;
+  padding-inline: 0.4rem;
+  padding-block: 0.2rem;
+  text-align: center;
+}
+.credit {
+  color: green;
+  background-color: #d2e9cc;
+}
+
+.table-bottom > a {
+  color: #011fca;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding-block: 1rem;
+}
+.table-bottom {
+  border-top: 0.8px solid rgba(157, 158, 160, 0.1);
+  display: flex;
+  justify-content: center;
+}
+.date {
+  line-height: 1.7;
+  padding-right: 0;
+  span {
+    font-size: 0.8rem;
+  }
+}
