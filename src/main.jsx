@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.jsx";
+import Header from "./components/Header/Header";
 
 function createBankAccount(userFullName, branchInfo, depositAmount) {
   let branchName = branchInfo.branchName;
@@ -41,6 +41,6 @@ function createBankAccount(userFullName, branchInfo, depositAmount) {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <Header></Header>
   </StrictMode>,
 );
