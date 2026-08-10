@@ -2,7 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import Header from "./components/Header/Header";
-import TransactionTable from "./components/TransactionTable/TransactionTable"
+import TransactionTable from "./components/TransactionTable/TransactionTable";
+import QuickTransferCard from "./components/QuickTransferCard/QuickTransferCard";
 
 function createBankAccount(userFullName, branchInfo, depositAmount) {
   let branchName = branchInfo.branchName;
@@ -12,14 +13,18 @@ function createBankAccount(userFullName, branchInfo, depositAmount) {
   const monthlyCreditLimit = 150000;
   const monthlyDebitLimit = 150000;
   let userBalance = 0;
-  let creditedToday= 0;
+  let creditedToday = 0;
   let debitedToday = 0;
-  let TransactionRecords=[]
+  let TransactionRecords = [];
   function updateCredits(credits) {
     if (credits + creditedToday <= dailyCreditLimit) {
       userBalance += credits;
       creditedToday += credits;
-       TransactionRecords.push({userBalance,actionType:credit,time: new Date()})
+      TransactionRecords.push({
+        userBalance,
+        actionType: credit,
+        time: new Date(),
+      });
     }
   }
   function updateDebits(debits, targetUseraccount) {
@@ -27,7 +32,11 @@ function createBankAccount(userFullName, branchInfo, depositAmount) {
       userBalance -= debits;
       targetUseraccount += debits;
       debitedToday += debits;
-      TransactionRecords.push({userBalance,actionType:debit,time: new Date()})
+      TransactionRecords.push({
+        userBalance,
+        actionType: debit,
+        time: new Date(),
+      });
     }
   }
   function TransactionHistory() {
@@ -36,13 +45,15 @@ function createBankAccount(userFullName, branchInfo, depositAmount) {
   return (accountDetails = {
     userFullName,
     accountNumber: 675445266598,
-    IbanNumber: branchCode + "675445"
+    IbanNumber: branchCode + "675445",
   });
 }
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Header></Header>
+
+    <QuickTransferCard></QuickTransferCard>
     <TransactionTable></TransactionTable>
   </StrictMode>,
 );

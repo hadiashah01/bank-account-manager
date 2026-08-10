@@ -5,17 +5,17 @@
   box-shadow:
     0px 0px 25px 0px rgba(0, 0, 0, 0.04),
     0px 4px 12px 0px rgba(0, 0, 0, 0.02);
+  background-color: rgb(255, 255, 255);
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 .table-top {
   display: flex;
   justify-content: space-around;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.3rem;
   align-items: center;
-  margin-inline: auto;
 }
 .icons {
   display: flex;
@@ -25,7 +25,7 @@ h2 {
   i {
     color: #1a1d1f;
     padding: 0.5rem;
-    border: 2px solid #ebebeb;
+    border: 1px solid #c0bebe;
     border-radius: 5px;
   }
 }
@@ -35,7 +35,7 @@ h2 {
 th,
 td {
   padding-block: 1em;
-  font-weight: 500;
+  font-weight: 400;
   color: #747781;
   font-size: 0.9rem;
   padding-inline: 1.6rem;
