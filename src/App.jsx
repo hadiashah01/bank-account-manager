@@ -37,7 +37,9 @@ export default function App() {
     if (!amount) return;
     setAccounts((prev) =>
       prev.map((acc) =>
-        acc.id == 1234 ? { ...acc, balance: acc.balance + Number(amount) } : acc,
+        acc.id == 1234
+          ? { ...acc, balance: acc.balance + Number(amount) }
+          : acc,
       ),
     );
   };
@@ -45,7 +47,10 @@ export default function App() {
     <>
       <Header></Header>
       <AccountsCard accounts={accounts}></AccountsCard>
-      <QuickTransferCard></QuickTransferCard>
+      <QuickTransferCard
+        onCredit={onCredit}
+        onDebit={onDebit}
+      ></QuickTransferCard>
       <AvailableBalance></AvailableBalance>
       <TransactionTable></TransactionTable>
     </>

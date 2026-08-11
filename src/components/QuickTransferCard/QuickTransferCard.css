@@ -35,10 +35,6 @@ input {
   font-size: 0.9rem;
   color: rgb(46, 46, 46);
 }
-select,
-.transfer-label {
-  display: none;
-}
 input {
   font-size: 1rem;
 }
