@@ -1,16 +1,109 @@
-# React + Vite
+# Banking Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A front-end banking dashboard built with React to practice component-based development, state management, and interactive UI functionality.
 
-Currently, two official plugins are available:
+The project includes multiple account cards, balance management, quick credit/debit transfers, and a transaction history interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## Table of Contents
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* [Live Demo](#live-demo)
+* [Features](#features)
+* [Built With](#built-with)
+* [Project Files](#project-files)
+* [Project Structure](#project-structure)
+* [What I Practiced](#what-i-practiced)
+* [Current Layout](#current-layout)
+* [Reference Docs](#reference-docs)
 
-## Expanding the ESLint configuration
+## Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Click the link below to visit the live interactive demo:
+
+**[Live Demo](https://github.com/hadiashah01/bank-account-manager/deployments/github-pages)**
+
+## Features
+
+* Banking dashboard interface
+* Checking, Savings, and Credit account cards
+* Available balance section
+* Quick Credit and Debit functionality
+* Dynamic account balance updates using React state
+* Transaction history table
+* Reusable React components
+* CSS-based dashboard styling
+* Horizontal scrolling for account cards and transaction tables where needed
+
+## Built With
+
+* React
+* JavaScript (ES6+)
+* Vite
+* CSS3
+* Flexbox
+* Font Awesome
+* Google Fonts
+
+## Project Files
+
+| File / Folder     | Description                                             |
+| ----------------- | ------------------------------------------------------- |
+| `src/components/` | Reusable React components                               |
+| `src/App.jsx`     | Main application component and account state management |
+| `src/index.css`   | Global styling and base styles                          |
+| `src/main.jsx`    | React application entry point                           |
+| `index.html`      | Main HTML document                                      |
+| `package.json`    | Project dependencies and scripts                        |
+
+## Project Structure
+
+```text
+banking-dashboard/
+│
+├── src/
+│   ├── components/
+│   │   ├── Header/
+│   │   ├── AccountsCard/
+│   │   ├── QuickTransferCard/
+│   │   ├── AvailableBalance/
+│   │   └── TransactionTable/
+│   │
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+│
+├── public/
+├── index.html
+├── package.json
+└── README.md
+```
+
+## What I Practiced
+
+* React functional components
+* `useState` for application state
+* Passing data and functions through props
+* Updating objects inside arrays using `map()`
+* Handling credit and debit operations
+* Controlled form inputs
+* Component-based UI structure
+* CSS Flexbox
+* Dashboard card layouts
+* Styling tables and form controls
+* Organizing a React project into reusable components
+
+## Current Layout
+
+The current version is primarily designed as a desktop dashboard.
+
+Some sections use horizontal scrolling to prevent content from being compressed on smaller screens, but **full responsive optimization has not been implemented yet**.
+
+
+## Reference Docs
+
+* [React Documentation](https://react.dev/)
+* [Vite Documentation](https://vite.dev/)
+* [MDN Web Docs – CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [MDN Web Docs – Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout)
+* [Font Awesome Documentation](https://fontawesome.com/docs)
+* [Google Fonts](https://fonts.google.com/)
