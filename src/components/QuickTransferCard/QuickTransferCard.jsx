@@ -1,5 +1,8 @@
 import "./QuickTransferCard.css";
-export default function QuickTransferCard() {
+import { useState } from "react";
+export default function QuickTransferCard({onDebit,onCredit}) {
+  const [targetId, setTargetId] = useState(5678);
+  const [amount, setAmount] = useState("");
   return (
     <div className="quick-transfer-card">
       <div className="transfer-card-top">
@@ -14,11 +17,11 @@ export default function QuickTransferCard() {
         </svg>
         <h2>Quick Transfer</h2>
       </div>
-      <label className="transfer-label" htmlFor="Transfer To">
+      <label className="transfer-label" htmlFor="transferTo">
         Transfer To
       </label>
       <br />
-      <select id="transferTo">
+      <select id="transferTo" defaultValue="5678 " onChange={(e)=>setTargetId(e.target.value)}>
         <option value="1234">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +34,7 @@ export default function QuickTransferCard() {
           </svg>
           Checking Account ****1234
         </option>
-        <option value="5678" selected>
+        <option value="5678">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
@@ -59,10 +62,10 @@ export default function QuickTransferCard() {
       <br />
       <label htmlFor="Amount">Amount</label>
       <br />
-      <input placeholder="$ 0.00" type="text" />
+      <input placeholder="$ 0.00" type="text" onChange={(e)=>{setAmount(e.target.value)}}/>
       <br />
-      <button className="credit-button">Credit</button>
-      <button>Debit</button>
+      <button className="credit-button" onClick={() => { onCredit(amount); setAmount("")}}>Credit</button>
+      <button onClick={() => { onDebit(amount); setAmount("")}}>Debit</button>
     </div>
   );
 }

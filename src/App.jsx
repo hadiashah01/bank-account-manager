@@ -22,6 +22,25 @@ export default function App() {
     },
   ]);
   const [activeAccountId, setActiveAccountId] = useState(1234);
+
+  const onDebit = (amount, targetId) => {
+    if (!amount || !targetId) return;
+    setAccounts((prev) =>
+      prev.map((acc) => {
+        return acc.id == targetId
+          ? { ...acc, balance: acc.balance - Number(amount) }
+          : acc;
+      }),
+    );
+  };
+  const onCredit = (amount) => {
+    if (!amount) return;
+    setAccounts((prev) =>
+      prev.map((acc) =>
+        acc.id == 1234 ? { ...acc, balance: acc.balance + Number(amount) } : acc,
+      ),
+    );
+  };
   return (
     <>
       <Header></Header>
