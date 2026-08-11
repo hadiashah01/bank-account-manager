@@ -1,11 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import Header from "./components/Header/Header";
-import TransactionTable from "./components/TransactionTable/TransactionTable";
-import QuickTransferCard from "./components/QuickTransferCard/QuickTransferCard";
-import AccountsCard from "./components/AccountsCard/AccountsCard";
-import AvailableBalance from "./components/AvailableBalance/AvailableBalance";
+import App from "./App";
 function createBankAccount(userFullName, branchInfo, depositAmount) {
   let branchName = branchInfo.branchName;
   let branchCode = branchInfo.branchCode;
@@ -23,7 +19,7 @@ function createBankAccount(userFullName, branchInfo, depositAmount) {
       creditedToday += credits;
       TransactionRecords.push({
         userBalance,
-        actionType:" credit",
+        actionType: " credit",
         time: new Date(),
       });
     }
@@ -43,19 +39,19 @@ function createBankAccount(userFullName, branchInfo, depositAmount) {
   function TransactionHistory() {
     return TransactionRecords;
   }
-  return (accountDetails = {
+  return {
     userFullName,
     accountNumber: 675445266598,
     IbanNumber: branchCode + "675445",
-  });
+    updateDebits,
+    updateCredits,
+    TransactionHistory
+  };
 }
 
+  
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Header></Header>
-    <AccountsCard></AccountsCard>
-    <QuickTransferCard></QuickTransferCard>
-    <AvailableBalance></AvailableBalance>
-    <TransactionTable></TransactionTable>
+   <App></App>
   </StrictMode>,
 );
