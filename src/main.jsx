@@ -4,7 +4,7 @@ import "./index.css";
 import Header from "./components/Header/Header";
 import TransactionTable from "./components/TransactionTable/TransactionTable";
 import QuickTransferCard from "./components/QuickTransferCard/QuickTransferCard";
-
+import AccountsCard from "./components/AccountsCard/AccountsCard";
 function createBankAccount(userFullName, branchInfo, depositAmount) {
   let branchName = branchInfo.branchName;
   let branchCode = branchInfo.branchCode;
@@ -52,7 +52,7 @@ function createBankAccount(userFullName, branchInfo, depositAmount) {
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Header></Header>
-
+    <AccountsCard></AccountsCard>
     <QuickTransferCard></QuickTransferCard>
     <TransactionTable></TransactionTable>
   </StrictMode>,
