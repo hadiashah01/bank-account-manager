@@ -19,8 +19,8 @@ export default function AccountsCard() {
           </a>
         </span>
       </div>
-      <div className="account-card-wrapper">
-        <div className="checking-card active">
+      <ul className="account-card-wrapper">
+        <li className="checking-card active">
           <div className="card-header">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,8 +40,8 @@ export default function AccountsCard() {
             <span className="card-number">****1234</span>
             <p className="account-balance">$12,450.00</p>
           </div>
-        </div>
-        <div className="saving-card">
+        </li>
+        <li className="saving-card">
           <div className="card-header">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,9 +61,9 @@ export default function AccountsCard() {
             <span className="card-number">****5678</span>
             <p className="account-balance">$40,120.50</p>
           </div>
-        </div>
+        </li>
 
-        <div className="credit-card">
+        <li className="credit-card">
           <div className="card-header">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -83,8 +83,8 @@ export default function AccountsCard() {
             <span className="card-number">****1234</span>
             <p className="account-balance">-$12,450.00</p>
           </div>
-        </div>
-        <div className="add-card ">
+        </li>
+        <li className="add-card ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="44px"
@@ -93,10 +93,10 @@ export default function AccountsCard() {
             fill="#011fca"
           >
             <path d="M440-120v-320H120v-80h320v-320h80v320h320v80H520v320h-80Z" />
-                  </svg>
-                  <p>Open New Accounts </p>
-        </div>
-      </div>
+          </svg>
+          <p>Open New Accounts </p>
+        </li>
+      </ul>
     </div>
   );
 }

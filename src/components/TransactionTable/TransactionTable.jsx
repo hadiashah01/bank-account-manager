@@ -5,8 +5,8 @@ export default function TransactionTable() {
       <div className="table-top">
         <h2>Recent Transactions</h2>
         <div className="icons">
-          <i class="fa-solid fa-arrow-down"></i>
-          <i class="fa-solid fa-sliders"></i>
+          <i className="fa-solid fa-arrow-down"></i>
+          <i className="fa-solid fa-sliders"></i>
         </div>
       </div>
       <div className="table-wrapper">

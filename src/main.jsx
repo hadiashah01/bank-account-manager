@@ -13,7 +13,7 @@ function createBankAccount(userFullName, branchInfo, depositAmount) {
   const dailyDebitLimit = 5000;
   const monthlyCreditLimit = 150000;
   const monthlyDebitLimit = 150000;
-  let userBalance = 0;
+  let userBalance = depositAmount;
   let creditedToday = 0;
   let debitedToday = 0;
   let TransactionRecords = [];
@@ -23,19 +23,19 @@ function createBankAccount(userFullName, branchInfo, depositAmount) {
       creditedToday += credits;
       TransactionRecords.push({
         userBalance,
-        actionType: credit,
+        actionType:" credit",
         time: new Date(),
       });
     }
   }
   function updateDebits(debits, targetUseraccount) {
-    if (debits + debitedToday <= dailydebitLimit) {
+    if (debits + debitedToday <= dailyDebitLimit) {
       userBalance -= debits;
       targetUseraccount += debits;
       debitedToday += debits;
       TransactionRecords.push({
         userBalance,
-        actionType: debit,
+        actionType: "debit",
         time: new Date(),
       });
     }
