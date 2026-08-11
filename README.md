@@ -20,7 +20,7 @@ The project includes multiple account cards, balance management, quick credit/de
 
 Click the link below to visit the live interactive demo:
 
-**[Live Demo](https://github.com/hadiashah01/bank-account-manager/deployments/github-pages)**
+**[Live Demo](https://hadiashah01.github.io/bank-account-manager/)**
 
 ## Features
 
@@ -94,7 +94,7 @@ banking-dashboard/
 
 ## Current Layout
 
-The current version is primarily designed as a desktop dashboard.
+The current version is primarily designed as a mobile dashboard.
 
 Some sections use horizontal scrolling to prevent content from being compressed on smaller screens, but **full responsive optimization has not been implemented yet**.
 
