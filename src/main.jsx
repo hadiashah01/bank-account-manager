@@ -45,13 +45,12 @@ function createBankAccount(userFullName, branchInfo, depositAmount) {
     IbanNumber: branchCode + "675445",
     updateDebits,
     updateCredits,
-    TransactionHistory
+    TransactionHistory,
   };
 }
 
-  
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-   <App></App>
+    <App />
   </StrictMode>,
 );
