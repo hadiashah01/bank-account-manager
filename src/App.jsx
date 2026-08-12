@@ -121,7 +121,7 @@ export default function App() {
         accounts={accounts}
       ></QuickTransferCard>
       <AvailableBalance activeAccount={activeAccount}></AvailableBalance>
-      <TransactionTable></TransactionTable>
+      <TransactionTable TransactionHistory={activeAccount.TransactionHistory()}></TransactionTable>
     </>
   );
 }
