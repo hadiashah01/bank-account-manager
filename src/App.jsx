@@ -35,7 +35,7 @@ export default function App() {
     function updateDebits(debits, targetUseraccount) {
       if (debits + debitedToday <= dailyDebitLimit) {
         userBalance -= debits;
-        targetUseraccount.balance += debits;
+        targetUseraccount.updateCredits(debits);
         debitedToday += debits;
         TransactionRecords.push({
           userBalance,
@@ -74,13 +74,12 @@ export default function App() {
     branchName: "Cantt Branch",
     branchCode: 345,
   };
-  const initialAccounts = [
+
+  const [accounts, setAccounts] = useState( [
     createBankAccount("Ali", mainBranch, 12000),
     createBankAccount("Ahmed", cityBranch, 20000),
     createBankAccount("Sara", canttBranch, 15000),
-  ];
-
-  const [accounts, setAccounts] = useState(initialAccounts);
+  ]);
   const [activeAccountNumber, setActiveAccountNumber] = useState(
     accounts[0].accountNumber,
   );
@@ -119,6 +118,7 @@ export default function App() {
       <QuickTransferCard
         onCredit={onCredit}
         onDebit={onDebit}
+        accounts={accounts}
       ></QuickTransferCard>
       <AvailableBalance></AvailableBalance>
       <TransactionTable></TransactionTable>

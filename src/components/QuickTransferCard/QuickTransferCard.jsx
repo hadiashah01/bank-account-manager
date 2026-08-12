@@ -1,7 +1,7 @@
 import "./QuickTransferCard.css";
 import { useState } from "react";
-export default function QuickTransferCard({ onDebit, onCredit }) {
-  const [targetId, setTargetId] = useState(5678);
+export default function QuickTransferCard({ accounts, onDebit, onCredit }) {
+  const [targetId, setTargetId] = useState(accounts[1].accountNumber);
   const [amount, setAmount] = useState("");
   const [showSelect, setShowSelect] = useState(false);
   return (
@@ -29,9 +29,12 @@ export default function QuickTransferCard({ onDebit, onCredit }) {
             defaultValue="5678"
             onChange={(e) => setTargetId(e.target.value)}
           >
-            <option value="1234">Checking Account ****1234</option>
-            <option value="5678">Savings Account ****5678</option>
-            <option value="9012">Credit Card ****9012</option>
+            {accounts.map((account) => (
+              <option value={account.accountNumber} key={account.accountNumber}>
+                {account.userFullName} ****
+                {String(account.accountNumber).slice(-4)}
+              </option>
+            ))}
           </select>
           <br />
         </>
