@@ -1,26 +1,26 @@
 import "./AvailableBalance.css";
 
-export default function AvailableBalance() {
+export default function AvailableBalance({activeAccount}) {
   return (
     <div className="balance-card">
       <div className="card-header">
         <p>Available Balance</p>
         <span className="badge">Active</span>
       </div>
-      <h2 className="amount">$12,450<span>.00</span></h2>
+      <h2 className="amount">{activeAccount.balance}<span>.00</span></h2>
 
       <div className="details">
         <div>
           <label>Account Holder</label>
-          <p>John Doe</p>
+          <p>{activeAccount.userFullName }</p>
         </div>
         <div>
           <label >Account Number</label>
-          <p>987654321</p>
+          <p>{activeAccount.accountNumber}</p>
         </div>
         <div>
           <label>IBAN</label>
-          <p>GB29 0000 1234 5678 9012</p>
+          <p>{activeAccount.IbanNumber }</p>
         </div>
         <div>
           <label>Daily credit/debit limit</label>

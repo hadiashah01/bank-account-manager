@@ -51,7 +51,7 @@ export default function App() {
     return {
       userFullName,
       accountNumber,
-      IbanNumber: branchCode + accountNumber,
+      IbanNumber: branchCode +" " + String(accountNumber).slice(1,5) +" " + String(accountNumber).slice(-4),
       get balance() {
         return userBalance;
       },
@@ -62,17 +62,17 @@ export default function App() {
   }
   const mainBranch = {
     branchName: "Main Branch",
-    branchCode: 567,
+    branchCode: "PB57",
   };
 
   const cityBranch = {
     branchName: "City Branch",
-    branchCode: 789,
+    branchCode: "GB79",
   };
 
   const canttBranch = {
     branchName: "Cantt Branch",
-    branchCode: 345,
+    branchCode: "US35",
   };
 
   const [accounts, setAccounts] = useState( [
@@ -80,8 +80,8 @@ export default function App() {
     createBankAccount("Ahmed", cityBranch, 20000),
     createBankAccount("Sara", canttBranch, 15000),
   ]);
-  const [activeAccountNumber, setActiveAccountNumber] = useState(
-    accounts[0].accountNumber,
+  const [activeAccount, setActiveAccount] = useState(
+    accounts[0],
   );
 
   const onDebit = (amount, targetAccountNumber) => {
@@ -92,7 +92,7 @@ export default function App() {
         (acc) => acc.accountNumber == targetAccountNumber,
       );
       const senderAccount = UpdatedAccounts.find(
-        (acc) => acc.accountNumber == activeAccountNumber,
+        (acc) => acc.accountNumber == activeAccount.accountNumber,
       );
       if (!senderAccount || !targetAccount) return UpdatedAccounts;
       senderAccount.updateDebits(Number(amount), targetAccount);
@@ -104,7 +104,7 @@ export default function App() {
     setAccounts((prev) => {
       const UpdatedAccounts = [...prev];
       const account = UpdatedAccounts.find(
-        (acc) => acc.accountNumber == activeAccountNumber,
+        (acc) => acc.accountNumber == activeAccount.accountNumber,
       );
       if (!account) return UpdatedAccounts;
       account.updateCredits(Number(amount));
@@ -120,7 +120,7 @@ export default function App() {
         onDebit={onDebit}
         accounts={accounts}
       ></QuickTransferCard>
-      <AvailableBalance></AvailableBalance>
+      <AvailableBalance activeAccount={activeAccount}></AvailableBalance>
       <TransactionTable></TransactionTable>
     </>
   );
