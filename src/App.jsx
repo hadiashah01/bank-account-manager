@@ -63,7 +63,7 @@ export default function App() {
       updateDebits,
       updateCredits,
       TransactionHistory,
-      branchName
+      branchName,
     };
   }
   const mainBranch = {
@@ -99,6 +99,7 @@ export default function App() {
         (acc) => acc.accountNumber == activeAccount.accountNumber,
       );
       if (!senderAccount || !targetAccount) return UpdatedAccounts;
+      if (senderAccount == targetAccount) return UpdatedAccounts;
       senderAccount.updateDebits(Number(amount), targetAccount);
       return UpdatedAccounts;
     });

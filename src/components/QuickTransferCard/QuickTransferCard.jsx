@@ -45,6 +45,8 @@ export default function QuickTransferCard({ accounts, onDebit, onCredit }) {
         }}
       />
       <br />
+      <p>Credit/Debit limit is set to $5000</p>
+      <br />
       <button
         className="credit-button"
         onClick={() => {
@@ -56,7 +58,8 @@ export default function QuickTransferCard({ accounts, onDebit, onCredit }) {
       </button>
       <button
         onClick={() => {
-            onDebit(amount, targetId);
+          onDebit(amount, targetId);
+          setAmount("");
             
           }
         }

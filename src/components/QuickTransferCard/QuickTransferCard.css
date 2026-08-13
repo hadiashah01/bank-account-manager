@@ -23,6 +23,11 @@ label {
   color: #414755;
   font-size: 0.75rem;
 }
+ 
+p {
+  font-weight: 500;
+  color: #414755;
+  font-size: 0.75rem;}
 select,
 input {
   width: 15rem;
@@ -39,7 +44,7 @@ input {
   font-size: 1rem;
 }
 button {
-  margin-top: 1.6rem;
+  margin-top: 1rem;
   padding: 0.8rem 2.1rem;
   border-radius: 5px;
   font-size: 1rem;
