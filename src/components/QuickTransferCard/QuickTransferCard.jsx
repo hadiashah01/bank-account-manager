@@ -3,7 +3,6 @@ import { useState } from "react";
 export default function QuickTransferCard({ accounts, onDebit, onCredit }) {
   const [targetId, setTargetId] = useState(accounts[1].accountNumber);
   const [amount, setAmount] = useState("");
-  const [showSelect, setShowSelect] = useState(false);
   return (
     <div className="quick-transfer-card">
       <div className="transfer-card-top">
@@ -18,8 +17,6 @@ export default function QuickTransferCard({ accounts, onDebit, onCredit }) {
         </svg>
         <h2>Quick Transfer</h2>
       </div>
-      {showSelect && (
-        <>
           <label className="transfer-label" htmlFor="transferTo">
             Transfer To
           </label>
@@ -37,8 +34,6 @@ export default function QuickTransferCard({ accounts, onDebit, onCredit }) {
             ))}
           </select>
           <br />
-        </>
-      )}
       <label htmlFor="Amount">Amount</label>
       <br />
       <input
@@ -61,15 +56,10 @@ export default function QuickTransferCard({ accounts, onDebit, onCredit }) {
       </button>
       <button
         onClick={() => {
-          if (!showSelect) {
-            setShowSelect(true);
-          } else {
-             
             onDebit(amount, targetId);
-            setAmount("");
-            setShowSelect(false);
+            
           }
-        }}
+        }
       >
         Debit
       </button>

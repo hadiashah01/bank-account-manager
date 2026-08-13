@@ -40,11 +40,24 @@ export default function TransactionTable({ TransactionHistory }) {
                 </td>
               </tr>
             ))}
+             <tr>
+              <td className="date">
+                <time>
+                  June 24, 2018 <br />
+                  <span>14:30 PM</span>
+                </time>
+              </td>
+              <td>
+                <div className="credit"> Credit</div>
+              </td>
+              <td>
+                <div className="credit-amount"> +$150.00</div>
+              </td>
+            </tr>
             <tr>
               <td className="date">
                 <time>
-                  July 14, 2018
-                  <br />
+                  Jan 24, 2026 <br />
                   <span>14:30 PM</span>
                 </time>
               </td>

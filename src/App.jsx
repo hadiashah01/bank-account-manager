@@ -51,13 +51,19 @@ export default function App() {
     return {
       userFullName,
       accountNumber,
-      IbanNumber: branchCode +" " + String(accountNumber).slice(1,5) +" " + String(accountNumber).slice(-4),
+      IbanNumber:
+        branchCode +
+        " " +
+        String(accountNumber).slice(1, 5) +
+        " " +
+        String(accountNumber).slice(-4),
       get balance() {
         return userBalance;
       },
       updateDebits,
       updateCredits,
       TransactionHistory,
+      branchName
     };
   }
   const mainBranch = {
@@ -75,14 +81,12 @@ export default function App() {
     branchCode: "US35",
   };
 
-  const [accounts, setAccounts] = useState( [
+  const [accounts, setAccounts] = useState([
     createBankAccount("Ali", mainBranch, 12000),
     createBankAccount("Ahmed", cityBranch, 20000),
     createBankAccount("Sara", canttBranch, 15000),
   ]);
-  const [activeAccount, setActiveAccount] = useState(
-    accounts[0],
-  );
+  const [activeAccount, setActiveAccount] = useState(accounts[0]);
 
   const onDebit = (amount, targetAccountNumber) => {
     if (!amount || !targetAccountNumber) return;
@@ -114,14 +118,20 @@ export default function App() {
   return (
     <>
       <Header></Header>
-      <AccountsCard accounts={accounts}></AccountsCard>
+      <AccountsCard
+        accounts={accounts}
+        activeAccount={activeAccount}
+        setActiveAccount={setActiveAccount}
+      ></AccountsCard>
       <QuickTransferCard
         onCredit={onCredit}
         onDebit={onDebit}
         accounts={accounts}
       ></QuickTransferCard>
       <AvailableBalance activeAccount={activeAccount}></AvailableBalance>
-      <TransactionTable TransactionHistory={activeAccount.TransactionHistory()}></TransactionTable>
+      <TransactionTable
+        TransactionHistory={activeAccount.TransactionHistory()}
+      ></TransactionTable>
     </>
   );
 }
