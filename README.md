@@ -1,24 +1,24 @@
 # Banking Dashboard
 
-A front-end banking dashboard built with **React** to practice component-based development, state management, component communication, and interactive banking functionality.
+A responsive financial dashboard template built with React and mock data. Users can switch between accounts, view available balances, manage credit and debit activity, track transactions, and simulate peer-to-peer (P2P) transfers.
 
-The application provides multiple account cards, dynamic account selection, balance management, credit/debit transfers, and transaction history.
+The application demonstrates a realistic banking dashboard experience with reusable React components, dynamic state updates, transaction tracking, and responsive layouts.
 
-# Table of Contents
+## Table of Contents
 
 - [Live Demo](#live-demo)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [How It Works](#how-it-works)
 - [Key Functionality](#key-functionality)
-- [Account Selection](#account-selection)
-- [Credit](#credit)
-- [Debit](#debit)
-- [Transaction History](#transaction-history)
+  - [Account Selection](#account-selection)
+  - [Credit](#credit)
+  - [Debit](#debit)
+  - [Transaction History](#transaction-history)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
-- [What I Practiced](#what-i-practiced)
-- [Future Improvements](#future-improvements)
+- [Deployment](#deployment)
+- [Technical Highlights](#technical-highlights)
 - [SEO](#seo)
 - [References](#references)
 - [Author](#author)
@@ -37,12 +37,14 @@ Click on preview image to visit live demo
 - Available balance display
 - Quick Credit functionality
 - Quick Debit / account-to-account transfers
+- Simulated P2P fund transfers
 - Dynamic account balance updates
 - Transaction history
 - Daily credit and debit limits
 - Reusable React components
 - Controlled form inputs
 - Horizontal scrolling for account cards and tables where required
+- SEO metadata with JSON-LD structured data
 
 ## Tech Stack
 
@@ -60,17 +62,26 @@ The application keeps the main account state in `App.jsx`.
 
 Account data and functionality are passed to child components through props.
 
-```text
-App
-├── Header
-├── AccountsCard
-│   └── Account selection
-├── QuickTransferCard
-│   └── Credit / Debit
-├── AvailableBalance
-│   └── Active account data
-└── TransactionTable
-    └── Transaction history
+```mermaid
+flowchart TD
+    App["App.jsx<br/>Application State"]
+
+    Header["Header"]
+    Accounts["AccountsCard<br/>Account Selection"]
+    Transfer["QuickTransferCard<br/>Credit / Debit"]
+    Balance["AvailableBalance<br/>Active Account Data"]
+    Transactions["TransactionTable<br/>Transaction History"]
+
+    App --> Header
+    App --> Accounts
+    App --> Transfer
+    App --> Balance
+    App --> Transactions
+
+    Accounts -->|"Select active account"| App
+    Transfer -->|"Update balances & transactions"| App
+    App -->|"Active account data"| Balance
+    App -->|"Transaction records"| Transactions
 ```
 
 The active account is selected from `AccountsCard`, while components such as `AvailableBalance`, `QuickTransferCard`, and `TransactionTable` display or modify data related to that account.
@@ -168,38 +179,61 @@ Create a production build:
 npm run build
 ```
 
-## What I Practiced
+## Deployment
 
-This project helped me practice:
+The application is deployed using GitHub Pages with the `gh-pages` package.
+
+The deployment workflow is configured in `package.json` using two npm scripts:
+
+```json
+"predeploy": "npm run build",
+"deploy": "gh-pages -d dist"
+```
+
+**Running:**
+
+```bash
+npm run deploy
+```
+
+automatically:
+
+1. Creates the production build using Vite.
+2. Generates the `dist` folder.
+3. Publishes the contents of `dist` to the `gh-pages` branch.
+4. Updates the GitHub Pages deployment.
+
+The project is served from the `gh-pages` branch while the main source code remains in the primary repository branch.
+
+### Deployment Command
+
+```bash
+npm run deploy
+```
+
+### Live Deployment
+
+[Banking Dashboard — GitHub Pages](https://hadiashah01.github.io/bank-account-manager/)
+
+## Technical Highlights
+
+This project demonstrates:
 
 - React functional components
-- `useState` and application state management
-- Passing data through props
-- Passing functions through props
-- Managing objects inside arrays
-- Updating account data with `map()`
-- Active account selection
-- Credit and debit operations
-- Controlled form inputs
-- Transaction management
-- Component-based UI architecture
-- CSS Flexbox
-- Dashboard layouts
-- Reusable component structure
-
-## Future Improvements
-
-Planned improvements include:
-
-- Backend/API integration
-- Persistent account and transaction data
-- Authentication and authorization
-- Improved form validation
-- Transaction filtering and sorting
-- Transaction pagination
-- Full responsive desktop layout
-- Better error and success feedback
-- Automated testing
+- `useState` for account and active-account state management
+- Passing callback functions between components
+- Reusable `createBankAccount()` function for account creation
+- Encapsulated account operations using JavaScript functions and closures
+- Credit and debit operations with daily transaction limits
+- Account-to-account fund transfers
+- Dynamic account selection
+- Transaction record management
+- Array operations using `find()` and the spread operator
+- Dynamic account number and IBAN generation
+- Getter-based balance access
+- Reusable component-based dashboard structure
+- Vite production build and GitHub Pages deployment
+- JSON-LD structured data
 
 ## SEO
 
@@ -222,5 +256,4 @@ The structured data describes the project as a web application and helps search 
 
 ## Author
 
-**Hadia** **Shahjahan**
-Built as a React front-end project to practice state management, component communication, and interactive UI development.
+**Hadi Shahjahan**
