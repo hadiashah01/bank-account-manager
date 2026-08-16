@@ -44,3 +44,9 @@ li {
     font-size: 20px;
   }
 }
+.container {
+  display: flex;
+}
+.wrapper{
+  margin-left: 300px;
+}

@@ -119,24 +119,27 @@ export default function App() {
   };
   return (
     <div className="container">
-      <Header></Header>
-      <AccountsCard
-        accounts={accounts}
-        activeAccount={activeAccount}
-        setActiveAccount={setActiveAccount}
-      ></AccountsCard>
-      <div className="balance-container">
-        <QuickTransferCard
-          onCredit={onCredit}
-          onDebit={onDebit}
+      <Menu></Menu>
+      <div className="wrapper">
+        <Header></Header>
+        <AccountsCard
           accounts={accounts}
-        ></QuickTransferCard>
-        <AvailableBalance activeAccount={activeAccount}></AvailableBalance>
-      </div>
+          activeAccount={activeAccount}
+          setActiveAccount={setActiveAccount}
+        ></AccountsCard>
+        <div className="balance-container">
+          <QuickTransferCard
+            onCredit={onCredit}
+            onDebit={onDebit}
+            accounts={accounts}
+          ></QuickTransferCard>
+          <AvailableBalance activeAccount={activeAccount}></AvailableBalance>
+        </div>
 
-      <TransactionTable
-        TransactionHistory={activeAccount.TransactionHistory()}
-      ></TransactionTable>
+        <TransactionTable
+          TransactionHistory={activeAccount.TransactionHistory()}
+        ></TransactionTable>
+      </div>
     </div>
   );
 }

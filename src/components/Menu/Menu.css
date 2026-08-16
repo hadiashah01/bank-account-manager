@@ -1,0 +1,8 @@
+.menu {
+  min-height: 1500px;
+  background-color: rgb(210, 218, 248);
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-width: 300px;
+}
