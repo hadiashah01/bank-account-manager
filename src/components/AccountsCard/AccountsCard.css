@@ -8,7 +8,7 @@
   }
 }
 span a {
-  color: #005BCB;
+  color: #005bcb;
   font-weight: 600;
   font-size: 0.9rem;
   display: inline-flex;
@@ -16,9 +16,8 @@ span a {
   gap: 6px;
   text-decoration: none;
 }
-.saving-card,
-.checking-card,
-.credit-card,.add-card {
+.card,
+.add-card {
   background-color: rgb(255, 255, 255);
   margin-inline: 1rem;
   margin-right: 0;
@@ -28,7 +27,7 @@ span a {
     0px 0px 25px 0px rgba(0, 0, 0, 0.04),
     0px 4px 12px 0px rgba(0, 0, 0, 0.02);
   padding: 1.5rem;
-  min-width: 85vw;
+  min-width: 19rem;
 }
 .account-card-wrapper {
   display: flex;
@@ -42,11 +41,18 @@ span a {
 .card-header {
   display: flex;
   align-items: center;
-  gap: 1rem;margin-bottom: 1rem;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
 }
-.account-type,
+.card-body {
+  padding-block: 0.5rem;
+}
+
 .account-holder,
 .card-number {
+  font-size: 1.1rem;
+}
+.account-type {
   font-size: 0.9rem;
 }
 .account-type,
@@ -58,17 +64,19 @@ span a {
 }
 
 .account-balance {
-  margin-block: .7rem .1rem;
-  font-size: 1.5rem;
+  margin-block: 0.7rem 0.1rem;
+  font-size: 1.7rem;
   font-weight: 600;
+  color: black;
 }
 .active {
-    border: 2px solid #005BCB;
+  border: 2px solid #005bcb;
 }
-.add-card  {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; gap: .5rem;
-     margin-right: 1rem;
+.add-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-right: 1rem;
 }

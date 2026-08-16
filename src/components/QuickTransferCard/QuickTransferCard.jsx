@@ -17,23 +17,19 @@ export default function QuickTransferCard({ accounts, onDebit, onCredit }) {
         </svg>
         <h2>Quick Transfer</h2>
       </div>
-          <label className="transfer-label" htmlFor="transferTo">
-            Transfer To
-          </label>
-          <br />
-          <select
-            id="transferTo"
-            defaultValue="5678"
-            onChange={(e) => setTargetId(e.target.value)}
-          >
-            {accounts.map((account) => (
-              <option value={account.accountNumber} key={account.accountNumber}>
-                {account.userFullName} ****
-                {String(account.accountNumber).slice(-4)}
-              </option>
-            ))}
-          </select>
-          <br />
+      <label className="transfer-label" htmlFor="transferTo">
+        Transfer To
+      </label>
+      <br />
+      <select id="transferTo" onChange={(e) => setTargetId(e.target.value)}>
+        {accounts.map((account) => (
+          <option value={account.accountNumber} key={account.accountNumber}>
+            {account.userFullName} ****
+            {String(account.accountNumber).slice(-4)}
+          </option>
+        ))}
+      </select>
+      <br />
       <label htmlFor="Amount">Amount</label>
       <br />
       <input
@@ -47,25 +43,25 @@ export default function QuickTransferCard({ accounts, onDebit, onCredit }) {
       <br />
       <p>Credit/Debit limit is set to $5000</p>
       <br />
-      <button
-        className="credit-button"
-        onClick={() => {
-          onCredit(amount);
-          setAmount("");
-        }}
-      >
-        Credit
-      </button>
-      <button
-        onClick={() => {
-          onDebit(amount, targetId);
-          setAmount("");
-            
-          }
-        }
-      >
-        Debit
-      </button>
+      <div className="buttons">
+        <button
+          className="credit-button"
+          onClick={() => {
+            onCredit(amount);
+            setAmount("");
+          }}
+        >
+          Credit
+        </button>
+        <button
+          onClick={() => {
+            onDebit(amount, targetId);
+            setAmount("");
+          }}
+        >
+          Debit
+        </button>
+      </div>
     </div>
   );
 }

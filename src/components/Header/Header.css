@@ -1,14 +1,14 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
 
 .fa-regular {
-  color: #005BCB;
+  color: #005bcb;
   font-size: 1.95rem;
 }
 .header {
   padding-block: 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   gap: 3.3rem;
   border-bottom: 0.5px solid rgba(157, 158, 160, 0.1);
 }
