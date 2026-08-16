@@ -3,6 +3,7 @@ import TransactionTable from "./components/TransactionTable/TransactionTable";
 import QuickTransferCard from "./components/QuickTransferCard/QuickTransferCard";
 import AccountsCard from "./components/AccountsCard/AccountsCard";
 import AvailableBalance from "./components/AvailableBalance/AvailableBalance";
+import Menu from "./components/Menu/Menu";
 import { useState } from "react";
 
 export default function App() {
@@ -117,22 +118,25 @@ export default function App() {
     });
   };
   return (
-    <>
+    <div className="container">
       <Header></Header>
       <AccountsCard
         accounts={accounts}
         activeAccount={activeAccount}
         setActiveAccount={setActiveAccount}
       ></AccountsCard>
-      <QuickTransferCard
-        onCredit={onCredit}
-        onDebit={onDebit}
-        accounts={accounts}
-      ></QuickTransferCard>
-      <AvailableBalance activeAccount={activeAccount}></AvailableBalance>
+      <div className="balance-container">
+        <QuickTransferCard
+          onCredit={onCredit}
+          onDebit={onDebit}
+          accounts={accounts}
+        ></QuickTransferCard>
+        <AvailableBalance activeAccount={activeAccount}></AvailableBalance>
+      </div>
+
       <TransactionTable
         TransactionHistory={activeAccount.TransactionHistory()}
       ></TransactionTable>
-    </>
+    </div>
   );
 }

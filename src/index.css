@@ -18,3 +18,29 @@ body {
 li {
   list-style: none;
 }
+@media (min-width: 375px) {
+  :root {
+    font-size: 17px;
+  }
+}
+@media (min-width: 425px) {
+  :root {
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    font-size: 19px;
+  }
+  .balance-container {
+    display: flex;
+    .balance-card {
+      margin-left: 0;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    font-size: 20px;
+  }
+}

@@ -32,12 +32,15 @@ h2 {
 .table-wrapper {
   overflow-x: scroll;
 }
+th:nth-child(1) {
+  padding-right: 50px;
+}
 th,
 td {
   padding-block: 1em;
   font-weight: 400;
   color: #747781;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   padding-inline: 1.6rem;
 }
 th {
@@ -51,11 +54,11 @@ td {
 }
 .credit,
 .debit {
-  font-size: 0.7rem;
+  font-size: 0.84rem;
   background-color: #e9eaee;
-  border-radius: 20px;
-  padding-inline: 0.4rem;
-  padding-block: 0.2rem;
+  border-radius: 15px;
+  padding-inline: 0.8rem;
+  padding-block: 0.4rem;
   text-align: center;
 }
 .credit {
@@ -78,7 +81,43 @@ td {
 .date {
   line-height: 1.7;
   padding-right: 0;
+  min-width: 10rem;
   span {
     font-size: 0.8rem;
+  }
+}
+@media (min-width: 768px) {
+  .table-top {
+    justify-content: space-between;
+  }
+  td,
+  .date {
+    padding-inline: 5rem;
+  }
+  td:nth-child(1) {
+    padding-right: 2rem;
+    padding-left: 1.5rem;
+  }
+  th:nth-child(1) {
+    padding-right: 5rem;
+    padding-left: 2rem;
+  }
+  .icons {
+    padding-left: 2rem;
+    gap: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .table-top {
+    justify-content: center;
+    gap: 20rem;
+  }
+  .table-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  td:nth-child(1),
+  th:nth-child(1) {
+    padding-inline: 5rem;
   }
 }
