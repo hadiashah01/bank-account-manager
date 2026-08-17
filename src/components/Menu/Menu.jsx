@@ -6,7 +6,7 @@ export default function Menu() {
         <h2>Bank Manager</h2>
         <div className="profile">
           <div className="profile-image">
-            <img src="./public/profile-photo.jpg" alt="profile-photo" />
+            <img src={`${import.meta.env.BASE_URL}profile-photo.jpg`} alt="profile-photo" />
           </div>
           <div className="profile-text">
             <p className="welcome-text">Welcome back</p>
