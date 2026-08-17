@@ -40,7 +40,7 @@ export default function TransactionTable({ TransactionHistory }) {
                 </td>
               </tr>
             ))}
-             <tr>
+            <tr>
               <td className="date">
                 <time>
                   June 24, 2018 <br />
@@ -71,9 +71,7 @@ export default function TransactionTable({ TransactionHistory }) {
           </tbody>
         </table>
       </div>
-      <div className="table-bottom">
-       View All Transactions
-      </div>
+      <div className="table-bottom">View All Transactions</div>
     </div>
   );
 }

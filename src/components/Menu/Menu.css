@@ -8,29 +8,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.15rem;
 }
 .menu-header h2 {
-  font-size: 1.3rem;
+  font-size: 1.3em;
   color: #005bcb;
-  padding-bottom: 1rem;
-  padding: 1.5rem;
+  padding: 1.4em;
+  padding-bottom: 1em;
 }
 .welcome-text {
-  font-size: 0.8rem;
+  font-size: 0.8em;
   font-weight: 600;
 }
 .verified-text {
-  font-size: 0.67rem;
+  font-size: 0.67em;
   color: #414755;
 }
 .profile {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.7em;
   padding-bottom: 0.99rem;
   border-bottom: 0.5px solid #9d9ea04d;
   margin-bottom: 2rem;
-  padding-inline: 1.3rem;
+  padding-inline: 1.8rem;
 }
 .profile-image {
   height: 2.5rem;
@@ -47,15 +48,12 @@
 .menu li {
   display: flex;
   gap: 1rem;
-  font-size: 4rem;
   padding-left: 0.8rem;
-
   align-items: center;
   justify-content: stretch;
   padding-right: 3rem;
   padding-block: 0.5rem;
   margin-block: 0.6rem;
-
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -68,4 +66,15 @@
 }
 .menu-body p {
   font-weight: 600;
+  font-size: 0.9rem;
+}
+@media (min-width: 320px) {
+  .menu {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .menu {
+    display: block;
+  }
 }

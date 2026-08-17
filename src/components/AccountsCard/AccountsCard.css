@@ -1,8 +1,8 @@
 .accounts-card-top {
   padding: 1.3rem;
+  justify-content: space-between;
   display: flex;
   align-items: center;
-  gap: 1rem;
   h2 {
     font-size: 1.5rem;
   }

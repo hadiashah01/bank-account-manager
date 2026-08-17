@@ -23,15 +23,7 @@ li {
     font-size: 17px;
   }
 }
-@media (min-width: 425px) {
-  :root {
-    font-size: 18px;
-  }
-}
 @media (min-width: 768px) {
-  :root {
-    font-size: 19px;
-  }
   .balance-container {
     display: flex;
     .balance-card {
@@ -40,13 +32,13 @@ li {
   }
 }
 @media (min-width: 1024px) {
-  :root {
-    font-size: 20px;
+  .wrapper {
+    margin-left: 250px;
+    width: calc(100% - 250px);
   }
-}
-.container {
-  display: flex;
-}
-.wrapper{
-  margin-left: 300px;
+  .container {
+    display: flex;
+    max-width: 1440px;
+    margin-inline: auto;
+  }
 }
