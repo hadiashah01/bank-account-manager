@@ -126,3 +126,12 @@ td {
     padding-inline: 5rem;
   }
 }
+.icons i:hover {
+  background-color:#d2e9cc;
+}
+th:hover {
+  color: #1a1d1f;
+}
+td:hover {
+ font-weight: 600;
+}

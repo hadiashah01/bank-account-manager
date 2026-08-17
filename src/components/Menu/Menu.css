@@ -78,3 +78,9 @@
     display: block;
   }
 }
+.menu li:hover  {
+  background-color: rgb(209, 212, 221);
+}
+.dashboard {
+    pointer-events: none;
+}
