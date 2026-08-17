@@ -42,7 +42,9 @@ td {
   color: #747781;
   font-size: 0.95rem;
   padding-inline: 1.6rem;
+  max-width: max-content;
 }
+
 th {
   border-block: 0.8px solid rgba(157, 158, 160, 0.1);
 }
@@ -72,11 +74,11 @@ td {
   font-size: 0.9rem;
   text-decoration: none;
   padding-block: 1rem;
-}
-.table-bottom {
   border-top: 0.8px solid rgba(157, 158, 160, 0.1);
   display: flex;
   justify-content: center;
+  max-width: max-content;
+  margin-inline: auto;
 }
 .date {
   line-height: 1.7;
@@ -127,11 +129,20 @@ td {
   }
 }
 .icons i:hover {
-  background-color:#d2e9cc;
+  background-color: #eeeff4;
 }
 th:hover {
   color: #1a1d1f;
 }
-td:hover {
- font-weight: 600;
+time:hover {
+  font-weight: 600;
+}
+.credit-amount:hover  {
+  font-weight: 600;
+}
+.debit-amount:hover {
+  font-weight: 600;
+}
+.table-bottom:hover{
+  text-decoration: underline;
 }
