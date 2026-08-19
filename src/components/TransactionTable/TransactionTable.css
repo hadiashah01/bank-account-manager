@@ -88,6 +88,21 @@ td {
     font-size: 0.8rem;
   }
 }
+@media (min-width: 480px) and (max-width: 767px) {
+  .table-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .table-top {
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  .transaction-table {
+    margin-inline: 3rem;
+  }
+}
+
 @media (min-width: 768px) {
   td,
   .date {
@@ -114,10 +129,10 @@ td {
     gap: 16rem;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   td,
   .date {
-    padding-inline: 9rem;
+    padding-inline: 8rem;
   }
   .table-top {
     gap: 30rem;
@@ -128,21 +143,17 @@ td {
     padding-inline: 5rem;
   }
 }
-.icons i:hover {
-  background-color: #eeeff4;
+@media (hover: hover)and (pointer: fine) {
+ .icons i:hover {
+  background-color: #bfbfc3;
 }
-th:hover {
-  color: #1a1d1f;
-}
-time:hover {
-  font-weight: 600;
-}
-.credit-amount:hover  {
-  font-weight: 600;
-}
-.debit-amount:hover {
-  font-weight: 600;
-}
-.table-bottom:hover{
+.table-bottom:hover {
   text-decoration: underline;
+} 
+}
+
+@media (min-width:528px) {
+  .table-wrapper {
+  overflow-x:hidden;
+}
 }

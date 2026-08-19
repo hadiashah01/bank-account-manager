@@ -42,3 +42,9 @@ li {
     margin-inline: auto;
   }
 }
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .balance-container {
+    margin-inline: 2rem;
+  }
+}

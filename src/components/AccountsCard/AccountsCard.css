@@ -83,29 +83,30 @@ span a {
   gap: 0.5rem;
   margin-right: 1rem;
 }
+@media (hover: hover) and (pointer: fine) {
+  .accounts-card svg {
+    fill: #39393c;
+  }
+  .card:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: translateY(-5px);
 
-.accounts-card svg {
-   fill:#39393c
-}
-.card:hover {
-  transition: transform 0.2s ease-in-out;
-  transform: translateY(-5px);
-
-  svg {
-    fill: #005bcb;
+    svg {
+      fill: #005bcb;
+    }
   }
-}
-.add-card:hover {
-  transition: transform 0.2s ease-in-out;
-  transform: translateY(-5px);
-  border: 1px solid #9b9ea3;
-  svg {
-    fill: #005bcb;
+  .add-card:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: translateY(-5px);
+    border: 1px solid #9b9ea3;
+    svg {
+      fill: #005bcb;
+    }
   }
-}
-span a:hover {
-  svg {
-    fill: #005bcb;
+  span a:hover {
+    svg {
+      fill: #005bcb;
+    }
+    border-bottom: 2px solid #005bcb;
   }
-  border-bottom: 2px solid #005bcb;
 }
