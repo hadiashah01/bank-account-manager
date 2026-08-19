@@ -29,10 +29,14 @@ Click on preview image to visit live demo
 
 [![View Live Demo](./public/preview.png)](https://hadiashah01.github.io/bank-account-manager/)
 
+**Responsive Previews:**  
+View the dashboard's responsive layouts:  
+ [Mobile Preview](./public/mobile.png) ·   [Tablet Preview](./public/tablet.png)
+
 ## Features
 
 - Banking dashboard interface
-- Checking, Savings, and Credit account cards
+- Account cards with branch and account information
 - Dynamic active-account selection
 - Available balance display
 - Quick Credit functionality
@@ -43,6 +47,11 @@ Click on preview image to visit live demo
 - Daily credit and debit limits
 - Reusable React components
 - Controlled form inputs
+- Responsive mobile, tablet, and desktop layouts
+- Responsive sidebar navigation
+- Interactive navigation and account states
+- Device-aware hover interactions
+- Responsive account cards and transaction table
 - Horizontal scrolling for account cards and tables where required
 - SEO metadata with JSON-LD structured data
 
@@ -63,15 +72,17 @@ The application keeps the main account state in `App.jsx`.
 Account data and functionality are passed to child components through props.
 
 ```mermaid
-flowchart TD
+  flowchart TD
     App["App.jsx<br/>Application State"]
 
+    Menu["Menu<br/>Sidebar Navigation"]
     Header["Header"]
     Accounts["AccountsCard<br/>Account Selection"]
     Transfer["QuickTransferCard<br/>Credit / Debit"]
     Balance["AvailableBalance<br/>Active Account Data"]
     Transactions["TransactionTable<br/>Transaction History"]
 
+    App --> Menu
     App --> Header
     App --> Accounts
     App --> Transfer
@@ -85,6 +96,8 @@ flowchart TD
 ```
 
 The active account is selected from `AccountsCard`, while components such as `AvailableBalance`, `QuickTransferCard`, and `TransactionTable` display or modify data related to that account.
+
+The `Menu` component provides sidebar navigation and adapts across viewport sizes. Interactive hover states are applied to pointer-based desktop interactions.
 
 ## Key Functionality
 
@@ -130,6 +143,7 @@ bank-account-manager/
 │
 ├── src/
 │   ├── components/
+│   │   ├── Menu/
 │   │   ├── Header/
 │   │   ├── AccountsCard/
 │   │   ├── QuickTransferCard/
@@ -205,12 +219,6 @@ automatically:
 
 The project is served from the `gh-pages` branch while the main source code remains in the primary repository branch.
 
-### Deployment Command
-
-```bash
-npm run deploy
-```
-
 ### Live Deployment
 
 [Banking Dashboard — GitHub Pages](https://hadiashah01.github.io/bank-account-manager/)
@@ -233,6 +241,12 @@ This project demonstrates:
 - Getter-based balance access
 - Reusable component-based dashboard structure
 - Vite production build and GitHub Pages deployment
+- Responsive layout implementation using CSS media queries
+- Mobile, tablet, and desktop viewport optimization
+- Responsive sidebar navigation
+- Responsive account-card and transaction-table layouts
+- Interactive navigation and account-selection states
+- Device-aware hover interactions
 - JSON-LD structured data
 
 ## SEO

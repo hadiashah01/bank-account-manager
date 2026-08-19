@@ -70,17 +70,14 @@
   font-size: 0.9rem;
 }
 
-    
-  
-
 @media (min-width: 1024px) {
   .menu {
     display: block;
   }
 }
-.menu li:hover  {
+.menu li:hover {
   background-color: rgb(209, 212, 221);
 }
 .dashboard {
-    pointer-events: none;
+  pointer-events: none;
 }

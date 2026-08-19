@@ -1,6 +1,4 @@
 import "./AccountsCard.css";
-import { useState } from "react";
-
 export default function AccountsCard({
   accounts,
   activeAccount,
@@ -46,7 +44,9 @@ export default function AccountsCard({
             </div>
           </div>
           <div className="card-body">
-            <span className="card-number">****{String(accounts[0].accountNumber).slice(1,5)}</span>
+            <span className="card-number">
+              ****{String(accounts[0].accountNumber).slice(-4)}
+            </span>
             <p className="account-balance">${accounts[0].balance}</p>
           </div>
         </li>
@@ -70,7 +70,9 @@ export default function AccountsCard({
             </div>
           </div>
           <div className="card-body">
-            <span className="card-number">****{String(accounts[1].accountNumber).slice(1,5)}</span>
+            <span className="card-number">
+              ****{String(accounts[1].accountNumber).slice(-4)}
+            </span>
             <p className="account-balance">${accounts[1].balance}</p>
           </div>
         </li>
@@ -95,7 +97,9 @@ export default function AccountsCard({
             </div>
           </div>
           <div className="card-body">
-            <span className="card-number">****{String(accounts[2].accountNumber).slice(1,5)}</span>
+            <span className="card-number">
+              ****{String(accounts[2].accountNumber).slice(-4)}
+            </span>
             <p className="account-balance">${accounts[2].balance}</p>
           </div>
         </li>

@@ -1,7 +1,7 @@
 import "./QuickTransferCard.css";
 import { useState } from "react";
 export default function QuickTransferCard({ accounts, onDebit, onCredit }) {
-  const [targetId, setTargetId] = useState(accounts[1].accountNumber);
+  const [targetId, setTargetId] = useState(0);
   const [amount, setAmount] = useState("");
   return (
     <div className="quick-transfer-card">
